@@ -1,0 +1,39 @@
+.bg-home {
+  background-image: url(../../assets/home/background-home-desktop.jpg);
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 200px 0;
+}
+
+.home-full-content {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.p-destination {
+  max-width: 444px;
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 32px;
+}
+
+.explore {
+  background-color: #fff;
+  border-radius: 100%;
+  width: 274px;
+  height: 274px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Bellefair';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  letter-spacing: 2px;
+  color: #0b0d17;
+}
