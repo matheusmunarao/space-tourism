@@ -3,6 +3,7 @@ import React from 'react';
 import './Destination.css';
 
 import TitlePage from '../../components/TitlePage';
+import SubMenu from '../../components/SubMenu/SubMenu';
 import DestinationImage from '../../components/Destination/DestinationImage';
 import DestinationPlace from '../../components/Destination/DestinationPlace';
 import DestinationText from '../../components/Destination/DestinationText';
@@ -17,7 +18,7 @@ const Destination = () => {
           <DestinationImage src="" alt="" />
         </div>
         <div>
-          {/* <SubMenu /> */}
+          <SubMenu />
           <DestinationPlace />
           <DestinationText />
           <DestinationInfo />
