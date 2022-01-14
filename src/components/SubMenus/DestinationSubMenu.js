@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import { DestinationContext } from '../../contexts/DestinationContext';
 
-const SubMenu = () => {
-  const [destination, setDestination] = useState('moon');
-
-  console.log(destination);
+const DestinationSubMenu = () => {
+  const { setDestination } = useContext(DestinationContext);
 
   return (
     <nav>
@@ -23,4 +22,4 @@ const SubMenu = () => {
   );
 };
 
-export default SubMenu;
+export default DestinationSubMenu;
