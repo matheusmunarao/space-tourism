@@ -1,24 +1,21 @@
-import React, { useState } from 'react';
+import React, { useContext } from "react";
+import { CrewContext } from "../../contexts/CrewContext";
+import { crewName } from "../../components/utils/CrewData";
 
 const CrewSubMenu = () => {
-  const [crew, setCrew] = useState('');
-
-  console.log(crew);
+  const { setCrew } = useContext(CrewContext);
 
   return (
     <nav>
-      <button type="button" onClick={() => setCrew('')}>
-        MOON
-      </button>
-      <button type="button" onClick={() => setCrew('')}>
-        MARS
-      </button>
-      <button type="button" onClick={() => setCrew('')}>
-        EUROPA
-      </button>
-      <button type="button" onClick={() => setCrew('')}>
-        TITAN
-      </button>
+      {crewName.map((name, index) => {
+        return (
+          <button
+            key={index}
+            type="button"
+            onClick={() => setCrew(name)}
+          ></button>
+        );
+      })}
     </nav>
   );
 };

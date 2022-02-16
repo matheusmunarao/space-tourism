@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
-const DestinationPlace = () => {
+const DestinationPlace = (props) => {
   return (
     <>
-      <h2>MOON</h2>
+      <h2>{props.place}</h2>
     </>
   );
 };

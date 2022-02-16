@@ -7,9 +7,13 @@ const DestinationSubMenu = () => {
 
   return (
     <nav>
-      {destinationName.map((name) => {
+      {destinationName.map((name, index) => {
         return (
-          <button type="button" onClick={() => setDestination(name)}>
+          <button
+            key={index}
+            type="button"
+            onClick={() => setDestination(name)}
+          >
             {name.toUpperCase()}
           </button>
         );

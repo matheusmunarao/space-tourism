@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TitlePage from "../../components/TitlePage";
 import DestinationSubMenu from "../../components/SubMenus/DestinationSubMenu";
 import DestinationImage from "../../components/Destination/DestinationImage";
@@ -10,33 +10,39 @@ import "./Destination.css";
 import { destinations } from "../../data/data.json";
 
 const Destination = () => {
-  const [destination, setDestination] = useState("moon");
+  const [destination, setDestination] = useState("Moon");
+  const [currentDestination, setCurrentDestination] = useState({});
+
+  useEffect(() => {
+    destinations.filter((element) => {
+      if (element.name === destination) {
+        return setCurrentDestination(element);
+      }
+
+      return null;
+    });
+  }, [destination]);
 
   return (
     <DestinationContext.Provider value={{ destination, setDestination }}>
       <div className="bg-destination">
         <div className="container">
-          {destinations.find((element) => {
-            return (
-              <>
-                <div>
-                  <TitlePage page="PICK YOUR DESTINATION" />
-                  <DestinationImage src="" alt="" />
-                </div>
-                <div>
-                  <DestinationSubMenu />
-                  <DestinationPlace />
-                  <DestinationText
-                    text={
-                      element.name === destination ? element.description : null
-                    }
-                  />
-                  <DestinationInfo />
-                </div>
-              </>
-            );
-          })}
-          ;
+          <div>
+            <TitlePage page="PICK YOUR DESTINATION" />
+            <DestinationImage
+              src={currentDestination.images?.webp}
+              alt={currentDestination.name}
+            />
+          </div>
+          <div>
+            <DestinationSubMenu />
+            <DestinationPlace place={currentDestination.name} />
+            <DestinationText text={currentDestination.description} />
+            <DestinationInfo
+              distance={currentDestination.distance}
+              travelTime={currentDestination.travel}
+            />
+          </div>
         </div>
       </div>
     </DestinationContext.Provider>
