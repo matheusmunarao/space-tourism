@@ -1,0 +1,16 @@
+.bg-crew {
+  background-image: url(../../assets/crew/background-crew-desktop.jpg);
+  background-size: cover;
+  height: 100vh;
+  padding-top: 300px;
+}
+
+.flex-crew {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.flex-crew > div > :first-child {
+  margin-bottom: 50px;
+}

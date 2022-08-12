@@ -2,7 +2,22 @@
   background-image: url(../../assets/destination/background-destination-desktop.jpg);
   background-size: cover;
   height: 100vh;
+  padding-top: 300px;
+}
+
+.flex-destination {
   display: flex;
-  align-items: flex-end;
-  padding: 200px 0;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.flex-destination > div > :first-child {
+  margin-bottom: 50px;
+}
+
+.divisor {
+  height: 1px;
+  width: 100%;
+  background-color: #fff;
+  margin: 40px 0;
 }
